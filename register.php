@@ -31,10 +31,7 @@ include('includes/navbar.php');
                                 <label for="">Password</label>
                                 <input type="text" name="password" class="form-control">
                             </div>
-                            <div class="form-group mb-3">
-                                <label for="">Confirm Password</label>
-                                <input type="text" name="confirm_password" class="form-control">
-                            </div>
+                            
                             <div class="form-group">
                                 <button type="submit" name="register_btn" class="btn btn-primary">Register Now</button>
                             </div>
