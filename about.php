@@ -1,18 +1,47 @@
+<?php
+$page_title = "Home Page";
+include('includes/header.php');
+?>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Login Form</title>
     <style>
         body {
-            display: flex;
-            justify-content: center; /* Centers horizontally */
-            align-items: center;     /* Centers vertically */
-            height: 100vh;          /* Full viewport height */
             margin: 0;
             background-color: #e0ffff;
-            padding: 20px;
             font-family: Arial, sans-serif;
         }
 
+        .navbar {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .navbar a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
         .about-container {
+            display: flex;
+            justify-content: center; /* Centers horizontally */
+            align-items: center;     /* Centers vertically */
+            height: calc(100vh - 80px); /* Adjust for navbar height */
+            padding: 20px;
+        }
+
+        .content {
             background-color: white;
             padding: 20px;
             border-radius: 8px;
@@ -29,33 +58,27 @@
             list-style-type: square;
             padding-left: 20px;
         }
-
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
+    <?php include('includes/navbar.php'); ?>
     <div class="about-container">
-        <h1>About Our Login Form</h1>
-        <p>Welcome to our login page! Our form allows users to securely access their accounts with ease.</p>
-        
-        <h2>Key Features</h2>
-        <ul>
-            <li><strong>Email Verification:</strong> Ensure your account is secure by verifying your email address before logging in.</li>
-            <li><strong>User-Friendly Design:</strong> Intuitive layout for quick access to your account.</li>
-            <li><strong>Responsive:</strong> Works seamlessly on all devices, from desktops to mobile.</li>
-        </ul>
-        
-        <h2>How It Works</h2>
-        <p>Simply enter your email and password to access your account. If you haven't verified your email yet, a prompt will guide you through the verification process.</p>
-        
-        <p>For more information, visit our <a href="register.php">Register Page</a>.</p>
+        <div class="content">
+            <h1>About Our Login Form</h1>
+            <p>Welcome to our login page! Our form allows users to securely access their accounts with ease.</p>
+            
+            <h2>Key Features</h2>
+            <ul>
+                <li><strong>Email Verification:</strong> Ensure your account is secure by verifying your email address before logging in.</li>
+                <li><strong>User-Friendly Design:</strong> Intuitive layout for quick access to your account.</li>
+                <li><strong>Responsive:</strong> Works seamlessly on all devices, from desktops to mobile.</li>
+            </ul>
+            
+            <h2>How It Works</h2>
+            <p>Simply enter your email and password to access your account. If you haven't verified your email yet, a prompt will guide you through the verification process.</p>
+            
+            <p>To register your account continue to register page. <a href="register.php">Register Page</a>.</p>
+        </div>
     </div>
 </body>
-
+</html>

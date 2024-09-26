@@ -9,45 +9,41 @@ use PHPMailer\PHPMailer\Exception;
 //Load Composer's autoloader
 require 'vendor/autoload.php';
   
-function sendemail_verify($name, $email, $verify_token) {
+    function sendemail_verify($name, $email, $verify_token) {
 
-    $mail = new PHPMailer(true);
+        $mail = new PHPMailer(true);
 
-    //$mail->SMTPDebug = SMTP::DEBUG_SERVER; //Enable verbose debug output
-    $mail->isSMTP(); //Send using SMTP
-    $mail->SMTPAuth   = true;  //Enable SMTP authentication
+        //$mail->SMTPDebug = SMTP::DEBUG_SERVER; //Enable verbose debug output
+        $mail->isSMTP(); //Send using SMTP
+        $mail->SMTPAuth   = true;  //Enable SMTP authentication
 
-    $mail->Host       = 'smtp.example.com'; //Set the SMTP server to send through
-    $mail->Username   = 'user@example.com';  //SMTP username
-    $mail->Password   = 'secret'; //SMTP password
+        $mail->Host       = "smtp.example.com"; //Set the SMTP server to send through
+        $mail->Username   = "shinayang41@gmail.com";  //SMTP username
+        $mail->Password   = "pedoalfred21"; //SMTP password
 
-    $mail->SMTPSecure = "tls"; //Enable implicit TLS encryption
-    $mail->Port       = 587;  //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        $mail->SMTPSecure = "tls"; //Enable implicit TLS encryption
+        $mail->Port       = 587;  //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
-    //Recipients
-    $mail->setFrom('from@example.com', 'Mailer');
-    $mail->addAddress($email);     //Add a recipient
-    
-    //Attachments
-    $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-    $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+        //Recipients
+        $mail->setFrom("shinayang41@gmail.com", $name);
+        $mail->addAddress($email);     //Add a recipient
+        
+        //Content
+        $mail->isHTML(true); //Set email format to HTML
+        $mail->Subject = "Email verification from Alfred Orapa";
 
-    //Content
-    $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = "Email verification from Alfred Orapa";
+        $email_template = "
+            <h2>You have Registered with Login Form of Alfred Orapa.</h2>
+            <h5>Verify your email to Login with the given link below.</h5>
+            <br/><br/>
+            <a href = 'http://localhost/AlfredOrapaIS21/Login_Form_with_Email_Verification/verify-email.php?token=$verify_token'>Click Me?</a>
+        ";
 
-    $email_template = "
-        <h2>You have Registered with Login Form of Alfred Orapa.</h2>
-        <h5>Verify your email to Login with the given link below.</h5>
-        <br/><br/>
-        <a href = 'http://localhost/AlfredOrapaIS21/Login_Form_with_Email_Verification/verify-email.php?token=$verify_token'>Click Me?</a>
-    ";
+        $mail ->Body =$email_template;
+        $mail->send();
+        //echo 'Message has been sent';
 
-    $mail ->Body =$email_template;
-    $mail->send();
-    echo 'Message has been sent';
-
-}
+    }
     if(isset($_POST['register_btn'])){
 
         $name = $_POST['name'];
@@ -55,7 +51,7 @@ function sendemail_verify($name, $email, $verify_token) {
         $email = $_POST['email'];
         $password = $_POST['password'];
         $verify_token = md5(rand());
-    
+
 
         //check if the email exist or not.
         $check_email_query = "SELECT email FROM users WHERE email='$email' LIMIT 1";
@@ -63,13 +59,13 @@ function sendemail_verify($name, $email, $verify_token) {
 
         if(mysqli_num_rows($check_email_query_run) > 0){
 
-            $_SESSION['status'] = "Email already exist";
+            $_SESSION['status'] = "Email ID already exist";
             header("Location: register.php");
 
         } else {
 
             //insert user or register new user.
-            $query = "INSERT INFO users (name, phone, email, password, verify_token) VALUES ('$name', '$phone', '$email', '$password', '$verify_token')";
+            $query = "INSERT INTO users (name, phone, email, password, verify_token) VALUES ('$name', '$phone', '$email', '$password', '$verify_token')";
             $query_run = mysqli_query($con, $query);
 
             if($query_run){
@@ -85,6 +81,6 @@ function sendemail_verify($name, $email, $verify_token) {
                 header("Location: register.php");
 
             }
-        }
-    }
+       }
+     }
 ?>
