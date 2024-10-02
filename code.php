@@ -52,7 +52,7 @@ require 'vendor/autoload.php';
         $password = $_POST['password'];
         $verify_token = md5(rand());
 
-
+                
         //check if the email exist or not.
         $check_email_query = "SELECT email FROM users WHERE email='$email' LIMIT 1";
         $check_email_query_run = mysqli_query($con, $check_email_query);
