@@ -1,4 +1,4 @@
-<!-- <?php 
+<?php 
 session_start();
 include('dbcon.php');
 
@@ -47,6 +47,7 @@ if(isset($_GET['token']))
 
         $_SESSION['status'] = "This Token does not exist!";
         header("Location: login.php");
+        exit(0);
       
 
     }
@@ -55,6 +56,6 @@ else{
     
     $_SESSION['status'] = "Not Allowed";
     header("Location: login.php");
- 
+    exit(0);
 }
-?> -->
+?>

@@ -13,13 +13,13 @@ require 'vendor/autoload.php';
 
         $mail = new PHPMailer(true);
 
-        //$mail->SMTPDebug = SMTP::DEBUG_SERVER; //Enable verbose debug output
+        $mail->SMTPDebug = 2;//SMTP::DEBUG_SERVER; //Enable verbose debug output
         $mail->isSMTP(); //Send using SMTP
         $mail->SMTPAuth   = true;  //Enable SMTP authentication
 
         $mail->Host       = "smtp.gmail.com"; //Set the SMTP server to send through
         $mail->Username   = "shinayang41@gmail.com";  //SMTP username
-        $mail->Password   = "nspqmhlcmxjavkxi"; //SMTP password
+        $mail->Password   = "evygxuefcflxstti"; //SMTP password
 
         $mail->SMTPSecure = "ssl"; //Enable implicit TLS encryption
         $mail->Port       = 465;  //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
@@ -36,7 +36,7 @@ require 'vendor/autoload.php';
             <h2>You have Registered with Login Form of Alfred Orapa.</h2>
             <h5>Verify your email to Login with the given link below.</h5>
             <br/><br/>
-            <a href = 'http://localhost/AlfredOrapaIS21/Login_Form_with_Email_Verification/verify-email.php?token=$verify_token'>Click Me?</a>
+            <a href = 'http://localhost/AlfredOrapaIS21/Login_Form_with_Email_Verification/verify_email.php?token=$verify_token'>Click Me?</a>
         ";
 
         $mail ->Body =$email_template;
