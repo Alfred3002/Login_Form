@@ -78,6 +78,7 @@ include('includes/header.php');
             <p>Simply enter your email and password to access your account. If you haven't verified your email yet, a prompt will guide you through the verification process.</p>
             
             <p>To register your account continue to register page. <a href="register.php">Register Page</a>.</p>
+            <p>To verify your account continue to login page. <a href="login.php">Login Page</a>.</p>
         </div>
     </div>
 </body>
