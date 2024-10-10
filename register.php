@@ -62,7 +62,7 @@ include('includes/navbar.php');
                             </div>
                             
                             <div class="form-group">
-                                <button type="submit" name="register_btn" class="btn btn-primary">Register Now</button>
+                                <button type="submit" name="register_btn" class="btn btn-secondary">Register Now</button>
                             </div>
                         </form>
                     </div>

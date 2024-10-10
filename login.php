@@ -1,5 +1,14 @@
 <?php
 session_start();
+
+if(isset($_SESSION['authenticated'])){
+
+    $_SESSION['status'] = "You are already logged in.";
+    header('Location: dashboard.php');
+    exit(0);
+
+}
+
 $page_title = "Login Form";
 include('includes/header.php');
 include('includes/navbar.php');
@@ -29,7 +38,7 @@ include('includes/navbar.php');
                     </div>
 
                     <div class="card-body">
-                        <form action="">
+                        <form action="logincode.php" method="POST">
                             
                             <div class="form-group mb-3">
                                 <label for="">Email Address</label>
@@ -48,7 +57,7 @@ include('includes/navbar.php');
                             </div>
             
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Login Now</button>
+                                <button type="submit" name="login_now_btn" class="btn btn-secondary">Login Now</button>
                             </div>
                         </form>
                     </div>
