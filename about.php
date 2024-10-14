@@ -9,36 +9,11 @@ include('includes/header.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Login Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            margin: 0;
             background-color: #e0ffff;
-            font-family: Arial, sans-serif;
-        }
-
-        .navbar {
-            background-color: #007bff;
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
-
-        .navbar a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-        }
-
-        .navbar a:hover {
-            text-decoration: underline;
-        }
-
-        .about-container {
-            display: flex;
-            justify-content: center; /* Centers horizontally */
-            align-items: center;     /* Centers vertically */
-            height: calc(100vh - 80px); /* Adjust for navbar height */
-            padding: 20px;
         }
 
         .content {
@@ -62,7 +37,8 @@ include('includes/header.php');
 </head>
 <body>
     <?php include('includes/navbar.php'); ?>
-    <div class="about-container">
+    
+    <div class="container my-5">
         <div class="content">
             <h1><i>About Our Login Form</i></h1>
             <p>Welcome to our login page! Our form allows users to securely access their accounts with ease.</p>
@@ -77,10 +53,19 @@ include('includes/header.php');
             <h2>How It Works</h2>
             <p>Simply enter your email and password to access your account. If you haven't verified your email yet, a prompt will guide you through the verification process.</p>
             
-            <p>To register your account continue to register page. <a href="register.php">Register Page</a>.</p>
-            <p>Once your email is already verified proceed to login page. <a href="login.php">Login Page</a>.</p>
-            <p>If you're looking for a source <a href="https://youtu.be/mKEQ7TJldN8?si=6_o8ZKZPLmNskuvL" target="_blank">Watch on YouTube</a>.</p>
+            <p>To register your account, continue to the register page. <a href="register.php">Register Page</a>.</p>
+            <p>Once your email is verified, proceed to the login page. <a href="login.php">Login Page</a>.</p>
+            <p>If you're looking for a source, <a href="https://youtu.be/mKEQ7TJldN8?si=6_o8ZKZPLmNskuvL" target="_blank">Watch on YouTube</a>.</p>
         </div>
     </div>
+
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+
 </body>
 </html>
+
+<?php
+include('includes/footer.php');
+?>

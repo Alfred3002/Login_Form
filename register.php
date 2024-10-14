@@ -13,12 +13,14 @@ include('includes/navbar.php');
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="alert">
+
                     <?php 
                         if(isset($_SESSION['status'])){
                            echo "<h4>".$_SESSION['status']."</h4>"; 
                            unset($_SESSION['status']);
                         }
                     ?>
+                    
                 </div>
                 <div class="card shadow">
                     <div class="card-header">
