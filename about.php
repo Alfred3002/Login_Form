@@ -13,7 +13,7 @@ include('includes/header.php');
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: #e0ffff;
+            background-color: #D3D3D3;
         }
 
         .content {
@@ -35,6 +35,7 @@ include('includes/header.php');
         }
     </style>
 </head>
+</head>
 <body>
     <?php include('includes/navbar.php'); ?>
     
@@ -47,7 +48,6 @@ include('includes/header.php');
             <ul>
                 <li><strong>Email Verification:</strong> Ensure your account is secure by verifying your email address before logging in.</li>
                 <li><strong>User-Friendly Design:</strong> Intuitive layout for quick access to your account.</li>
-                <li><strong>Responsive:</strong> Works seamlessly on all devices, from desktops to mobile.</li>
             </ul>
             
             <h2>How It Works</h2>

@@ -25,7 +25,7 @@ include('includes/navbar.php');
                     <?php 
                         if(isset($_SESSION['status'])){
                             ?>
-                            <div class="alert alert-success">
+                            <div class="alert alert-danger">
                                 <h5> <?= $_SESSION['status']; ?> </h5>
                             </div>
                             <?php unset($_SESSION['status']); 

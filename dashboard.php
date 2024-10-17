@@ -8,6 +8,8 @@ include('includes/navbar.php');
 
 ?>
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
 
 <div class="py-5">
         <div class="container">
@@ -24,16 +26,18 @@ include('includes/navbar.php');
                         }
                     ?> 
 
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>User Dashboard</h4>
+                    <div class="card shadow-lg">
+                        <div class="card-header bg-primary text-white">
+                            <h4 class="mb-0">User Dashboard</h4>
                         </div>
                         <div class="card-body">
-                            <h4>Access when you're Login</h4>
+                            <h4 class="text-center">Access when you're Login</h4>
                             <hr>
-                            <h5>Username: <?= $_SESSION['auth_user']['username']?></h5>
-                            <h5>Email: <?= $_SESSION['auth_user']['email']?></h5>
-                            <h5>Phone Number: <?= $_SESSION['auth_user']['phone']?></h5>
+                            <h5> <i class="bi bi-person-fill"></i> <strong>Username: </strong><?= $_SESSION['auth_user']['username']?></h5>
+                            <hr>
+                            <h5> <i class="bi bi-envelope-fill"></i> <strong>Email: </strong><?= $_SESSION['auth_user']['email']?></h5>
+                            <hr>
+                            <h5> <i class="bi bi-phone-fill"></i> <strong>Phone Number: </strong><?= $_SESSION['auth_user']['phone']?></h5>
                         </div>
                     </div>    
                     
