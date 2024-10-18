@@ -7,18 +7,18 @@ include('includes/navbar.php');
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> <!-- Wako kasabot sa gibati run, mura nako dere ug kaundangun -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-
+   
     <style>
-            body, html {
-                height: 100%;
-                margin: 0;
-            }
-            .full-height {
-                height: 100vh; /* Fill the entire viewport height */
-            }
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+        .full-height {
+            height: 100vh; /* Fill the entire viewport height */
+        }
     </style>
 
-    < <div class="py-5 bg-light full-height"> <!--serves as a container with padding and a light background, filling the entire viewport height. -->
+    <div class="py-5 bg-light full-height">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8 text-center">

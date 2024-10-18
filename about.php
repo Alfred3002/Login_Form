@@ -3,68 +3,74 @@ $page_title = "Home Page";
 include('includes/header.php');
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Login Form</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+<head> 
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Login Form Features</title>
     <style>
-        body {
-            background-color: #D3D3D3;
+        .card {
+            transition: transform 0.3s;
         }
-
-        .content {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            margin: auto;
+        .card:hover {
+            transform: scale(1.05);
         }
-
-        h1, h2 {
-            color: #333;
-        }
-
-        ul {
-            list-style-type: square;
-            padding-left: 20px;
+        .feature-icon {
+            font-size: 2em;
+            margin-right: 10px;
+            color: #007bff;
         }
     </style>
 </head>
-</head>
 <body>
     <?php include('includes/navbar.php'); ?>
-    
-    <div class="container my-5">
-        <div class="content">
-            <h1><i>About Our Login Form</i></h1>
-            <p>Welcome to our login page! Our form allows users to securely access their accounts with ease.</p>
-            
-            <h2>Key Features</h2>
-            <ul>
-                <li><strong>Email Verification:</strong> Ensure your account is secure by verifying your email address before logging in.</li>
-                <li><strong>User-Friendly Design:</strong> Intuitive layout for quick access to your account.</li>
-            </ul>
-            
-            <h2>How It Works</h2>
-            <p>Simply enter your email and password to access your account. If you haven't verified your email yet, a prompt will guide you through the verification process.</p>
-            
-            <p>To register your account, continue to the register page. <a href="register.php">Register Page</a>.</p>
-            <p>Once your email is verified, proceed to the login page. <a href="login.php">Login Page</a>.</p>
-            <p>If you're looking for a source, <a href="https://youtu.be/mKEQ7TJldN8?si=6_o8ZKZPLmNskuvL" target="_blank">Watch on YouTube</a>.</p>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+            <div class="card border-primary shadow-sm">
+                <div class="card-body">
+                    <h1 class="card-title text-primary"><i>About Our Login Form</i></h1>
+                    <p class="card-text">Welcome to our login page! Our form allows users to securely access their accounts with ease.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 mb-3 mb-sm-0">
+            <div class="card border-success shadow-sm">
+                <div class="card-body">
+                    <h2 class="card-title text-success">Key Features</h2>
+                    <ul class="list-unstyled">
+                        <li class="d-flex align-items-center">
+                            <i class="fas fa-envelope feature-icon"></i>
+                            <span><strong>Email Verification:</strong> Ensure your account is secure by verifying your email address before logging in.</span>
+                        </li>
+                        <li class="d-flex align-items-center">
+                            <i class="fas fa-user-friends feature-icon"></i>
+                            <span><strong>User-Friendly Design:</strong> Intuitive layout for quick access to your account.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card border-info shadow-sm">
+                <div class="card-body">
+                    <h2 class="card-title text-info">How It Works</h2>
+                    <p class="card-text">Simply enter your email and password to access your account. If you haven't verified your email yet, a prompt will guide you through the verification process.</p>
+                    <p class="card-text">To register your account, continue to the register page. <a href="register.php">Register Page</a>.</p>
+                    <p class="card-text">Once your email is verified, proceed to the login page. <a href="login.php">Login Page</a>.</p>
+                    <p class="card-text">If you're looking for a source, <a href="https://youtu.be/mKEQ7TJldN8?si=6_o8ZKZPLmNskuvL" target="_blank">Watch on YouTube</a>.</p>
+                </div>
+            </div>
         </div>
     </div>
+</div>
 
-    <!-- Bootstrap JS (Optional) -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
-
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-</html>
+
+
 
 <?php
 include('includes/footer.php');
