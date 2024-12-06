@@ -5,8 +5,8 @@ include('includes/header.php');
 include('includes/navbar.php');
 ?>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> <!-- Wako kasabot sa gibati run, mura nako dere ug kaundangun -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>  Wako kasabot sa gibati run, mura nako dere ug kaundangun
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script> -->
 
 <style>
     body, html {
@@ -124,10 +124,6 @@ include('includes/navbar.php');
                     <p class="lead">Easily add, update, and view employee details in one place.</p>
                     <hr class="my-4">
                     <p>Start managing your employee records by logging in or registering an account.</p>
-                    <div class="card-body">
-                        <a class="btn btn-custom" href="login.php">Login</a>
-                        <a class="btn btn-custom-outline" href="register.php">Register</a>
-                    </div>
                 </div>
             </div>
         </div>

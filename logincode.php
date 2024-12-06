@@ -25,7 +25,7 @@ if(isset($_POST['login_now_btn'])){
                 'email' => $row['email']
             ];
             $_SESSION['status'] = "You login successfully.";
-            header("Location: data.php");
+            header("Location: worker.php");
             exit(0);
 
            }
