@@ -1,7 +1,3 @@
-<?php
-include ('header.php');
-?>
-
 <!-- Navbar Section -->
 <div class="bg-dark">
     <div class="container">
@@ -56,7 +52,3 @@ include ('header.php');
         </div>
     </div>
 </div>
-
-<?php 
-include ('footer.php');
-?>

@@ -5,27 +5,40 @@ include('includes/header.php');
 include('includes/navbar.php');
 ?>
 
-<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>  Wako kasabot sa gibati run, mura nako dere ug kaundangun
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <style>
+    /* Set the background image to cover the full screen */
+    .background-image {
+        background-image: url('back.jpg'); /* Ensure the path is correct */
+        background-size: cover;  /* Ensures the image covers the entire background */
+        background-position: center;  /* Centers the image */
+        background-repeat: no-repeat; /* Prevents image from repeating */
+        height: 100vh;  /* Full viewport height */
+    }
+
     body, html {
         height: 100%;
         margin: 0;
     }
+
     .full-height {
         height: 100vh; /* Fill the entire viewport height */
         display: flex;
         flex-direction: column;
         justify-content: space-between;
     }
+
     .bg-custom {
         background-color: #f4f7f6; /* Light background color */
     }
+
     .card {
         border-radius: 10px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
+
     .btn-custom, .btn-custom-outline {
         padding: 6px 12px; /* Reduced padding */
         font-size: 14px; /* Smaller font size */
@@ -34,23 +47,28 @@ include('includes/navbar.php');
         width: 130px; /* Slightly smaller width */
         margin: 4px; /* Reduced spacing between buttons */
     }
+
     .btn-custom {
         background-color: #4CAF50;
         color: white;
     }
+
     .btn-custom-outline {
         border: 2px solid #4CAF50;
         color: #4CAF50;
     }
+
     .btn-custom-outline:hover {
         background-color: #4CAF50;
         color: white;
     }
+
     .row {
         display: flex;
         justify-content: center;
         align-items: center;
     }
+
     .card-body {
         text-align: center;
     }
@@ -110,9 +128,62 @@ include('includes/navbar.php');
         color: #555;
     }
 
+    /* Glassmorphism Effect (Very Subtle) */
+.glass {
+    background: rgba(255, 255, 255, 0.4);  /* More opaque background for better text contrast */
+    border-radius: 15px;  /* Rounded corners */
+    padding: 20px;
+    backdrop-filter: blur(3px);  /* Less intense blur for a softer glassmorphism */
+    -webkit-backdrop-filter: blur(3px); /* For Safari */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Lighter border */
+}
+
+/* Apply subtle glassmorphism to all divs you want */
+.card, .feature-card, .email-card {
+    background: rgba(255, 255, 255, 0.4);  /* Increased opacity to make text more readable */
+    border-radius: 15px;  /* Rounded corners */
+    padding: 20px;
+    backdrop-filter: blur(3px);  /* Reduced blur effect */
+    -webkit-backdrop-filter: blur(3px); /* For Safari */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Lighter border */
+    color: #333; /* Darker text for contrast */
+}
+
+/* Modify button to match the subtle glassmorphism theme */
+.btn-custom, .btn-custom-outline {
+    background: rgba(255, 255, 255, 0.4); /* Slightly more opaque for better contrast */
+    border-radius: 10px;  /* Rounded corners */
+    backdrop-filter: blur(2px);  /* Less intense blur */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Lighter border */
+    color: white;
+    transition: all 0.3s ease;
+}
+
+/* Adding subtle glassmorphism to row and column containers */
+.row, .container, .features {
+    backdrop-filter: blur(3px);  /* Subtle blur effect */
+}
+
+/* Add text shadow for readability */
+.card h3, .card h4, .card p, .feature-card h5, .email-card h5 {
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4); /* Lighter shadow to improve text contrast */
+}
+
+/* Ensure good contrast on the buttons */
+.btn-custom {
+    background-color: #4CAF50; /* Solid color for better visibility */
+    border: none;
+}
+
+.btn-custom-outline {
+    border: 2px solid #4CAF50;
+    color: #4CAF50;
+}
+
 </style>
 
-<div class="py-5 bg-custom full-height">
+<!-- Apply background image class here -->
+<div class="py-5 bg-custom full-height background-image">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8 text-center">
@@ -120,10 +191,10 @@ include('includes/navbar.php');
                     <h3 class="display-4 text-success">
                         <i class="bi bi-person-fill"></i> Employee Management System
                     </h3>
-                    <h4 class="text-secondary">Efficiently Manage Employee Data</h4>
-                    <p class="lead">Easily add, update, and view employee details in one place.</p>
-                    <hr class="my-4">
-                    <p>Start managing your employee records by logging in or registering an account.</p>
+                    <h4 class="text-secondary text-success">Efficiently Manage Employee Data</h4>
+                    <p class="lead text-light">Easily add, update, and view employee details in one place.</p>
+                    <hr>
+                    <p class="text-light">Start managing your employee records by logging in or registering an account.</p>
                 </div>
             </div>
         </div>
@@ -161,6 +232,4 @@ include('includes/navbar.php');
         </div>
     </div>
 </div>
-
-
 <?php include('includes/footer.php');?>
