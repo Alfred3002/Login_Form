@@ -30,73 +30,133 @@ include ('workerCon/workerCon.php');
     }
 
 ?>
-    <div class="container my-5">
-        <h2>Edit Employee</h2>
-        <br>
-        <br>
+<style>
+    /* Background image */
+    .background-image {
+        background-image: url('images/worker.jpg');
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1; /* Keeps the background behind all content */
+    }
 
-        <form action="" method="post">
-        <?php
+    /* Glassmorphism effect on the card container */
+    .card {
+        background: rgba(255, 255, 255, 0.3); /* Semi-transparent white background */
+        backdrop-filter: blur(10px); /* Frosted glass effect */
+        border-radius: 15px; /* Rounded corners */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for a floating effect */
+        padding: 30px; /* Space inside the card */
+    }
+
+    /* Optional: Apply some padding to the body to create a nice layout */
+    body {
+        padding-top: 0px; /* Adjust top padding if needed */
+        padding-bottom: 50px; /* Adjust bottom padding if needed */
+    }
+
+    /* Apply a more subtle shadow on the input fields */
+    .form-control {
+        background-color: rgba(255, 255, 255, 0.8); /* Slightly white background for inputs */
+        border-radius: 10px;
+        border: 1px solid #ddd; /* Light border */
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Inner shadow */
+    }
+
+    /* Make buttons look consistent with frosted glass */
+    .btn-primary, .btn-outline-secondary {
+        background-color: rgba(0, 123, 255, 0.8); /* Semi-transparent button background */
+        border: none;
+        color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for buttons */
+    }
+
+    .btn-primary:hover, .btn-outline-secondary:hover {
+        background-color: rgba(0, 123, 255, 1); /* Solid color on hover */
+    }
+
+    /* Make the alert box look consistent with the glassmorphism theme */
+    .alert-success {
+        background-color: rgba(76, 175, 80, 0.7); /* Transparent green */
+        border-radius: 10px;
+        color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+</style>
+
+<div class="background-image"><!-- Background image div -->
+    <div class="container my-4">
+        <div class="card p-3 shadow-lg">
+            <h2 class="text-center mb-4 text-success"><b>Edit Employee</b></h2>
+
+            <!-- Success Message -->
+            <?php
                 if(isset($_GET['success'])){
-                    echo '<div class="w-25 alert alert-success" role="alert">'.$_GET['success'].'</div>';
+                    echo '<div class="alert alert-success text-center" role="alert">'.$_GET['success'].'</div>';
                 }
-            
             ?>
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Name</label>
-                <div class="col-sm-6">
-                    <input type="text" value="<?php echo $fecth['name'] ?>" name="name" class="form-control" placeholder="Client Name" required>
+            <!-- Form Section -->
+            <form action="" method="post">
+                
+                <!-- Name Field -->
+                <div class="mb-3">
+                    <label for="name" class="form-label text-success"><b>Employee Name</b></label>
+                    <input type="text" name="name" id="name" value="<?php echo $fecth['name']; ?>" class="form-control shadow-sm" placeholder="Enter Employee Name" required>
                 </div>
-            </div>
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Email</label>
-                <div class="col-sm-6">
-                    <input type="email" value="<?php echo $fecth['email'] ?>" name="email" class="form-control" placeholder="Client Email" required>
+
+                <!-- Email Field -->
+                <div class="mb-3">
+                    <label for="email" class="form-label text-success"><b>Employee Email</b></label>
+                    <input type="email" name="email" id="email" value="<?php echo $fecth['email']; ?>" class="form-control shadow-sm" placeholder="Enter Employee Email" required>
                 </div>
-            </div>
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Phone No.</label>
-                <div class="col-sm-6">
-                    <input type="number" value="<?php echo $fecth['mobile'] ?>" name="number" class="form-control" placeholder="Client Phone Number" required>
+
+                <!-- Phone Number Field -->
+                <div class="mb-3">
+                    <label for="phone" class="form-label text-success"><b>Phone No.</b></label>
+                    <input type="number" name="number" id="phone" value="<?php echo $fecth['mobile']; ?>" class="form-control shadow-sm" placeholder="Enter Employee Phone Number" required>
                 </div>
-            </div>
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Address</label>
-                <div class="col-sm-6">
-                    <input type="text" value="<?php echo $fecth['address'] ?>" name="address" class="form-control" placeholder="Client Address" required>
+
+                <!-- Address Field -->
+                <div class="mb-3">
+                    <label for="address" class="form-label text-success"><b>Employee Address</b></label>
+                    <input type="text" name="address" id="address" value="<?php echo $fecth['address']; ?>" class="form-control shadow-sm" placeholder="Enter Employee Address" required>
                 </div>
-            </div>
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Date Of Birth</label>
-                <div class="col-sm-6">
-                    <input type="date" value="<?php echo $fecth['birth'] ?>" name="date" class="form-control" placeholder="Client Date Of Birth" required>
+
+                <!-- Date of Birth Field -->
+                <div class="mb-3">
+                    <label for="dob" class="form-label text-success"><b>Date of Birth</b></label>
+                    <input type="date" name="date" id="dob" value="<?php echo $fecth['birth']; ?>" class="form-control shadow-sm" required>
                 </div>
-            </div>
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label" >Gender</label>
-                <div class="col-sm-6">
-                   <select name="gender" class="form-control">
-                    <?php
-                        if($fecth['gender'] === 'Male'){
-                            echo '<option>Male</option>
-                            <option>Female</option>';
-                        }else{
-                            echo '<option>Female</option>
-                            <option>Male</option>';
-                        }
-                    ?>
-                        
-                   </select>
+
+                <!-- Gender Field -->
+                <div class="mb-3">
+                    <label for="gender" class="form-label text-success"><b>Gender</b></label>
+                    <select name="gender" id="gender" class="form-control shadow-sm">
+                        <?php
+                            if($fecth['gender'] === 'Male'){
+                                echo '<option>Male</option>
+                                      <option>Female</option>';
+                            } else {
+                                echo '<option>Female</option>
+                                      <option>Male</option>';
+                            }
+                        ?>
+                    </select>
                 </div>
-            </div>
-            <div class="row mb-3">
-               <button type="submit" name="submit" class="col-sm-3 btn btn-primary">Edit Employee</button>
-                <div class="col-sm-6">
-                   <a href="worker.php" class="btn btn-outline-primary">Go Back</a>
+
+                <div class="mb-4 d-flex gap-2 justify-content-center">
+                    <button type="submit" name="submit" class="btn btn-primary w-48 shadow-sm">Edit Employee</button>
+                    <a href="worker.php" class="btn btn-outline-secondary w-48 shadow-sm">Go Back</a>
                 </div>
-            </div>
-        </form>
+
+            </form>
+        </div>
     </div>
+</div>
+
 <?php
 include ('includes/footer.php');
 ?>

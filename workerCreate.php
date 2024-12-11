@@ -86,7 +86,7 @@
 
 <div class="background-image"><!-- Background image div -->
     <div class="container my-4">
-        <div class="card p-4 shadow-lg">
+        <div class="card p-3 shadow-lg">
             <h2 class="text-center mb-4 text-success">New Employee</h2>
 
             <!-- Success Message -->
@@ -101,37 +101,37 @@
                 
                 <!-- Name Field -->
                 <div class="mb-3">
-                    <label for="name" class="form-label text-success">Employee Name</label>
+                    <label for="name" class="form-label text-success"><b>Employee Name</b></label>
                     <input type="text" name="name" id="name" class="form-control shadow-sm" placeholder="Enter Employee Name" required>
                 </div>
 
                 <!-- Email Field -->
                 <div class="mb-3">
-                    <label for="email" class="form-label text-success">Employee Email</label>
+                    <label for="email" class="form-label text-success"><b>Employee Email</b></label>
                     <input type="email" name="email" id="email" class="form-control shadow-sm" placeholder="Enter Employee Email" required>
                 </div>
 
                 <!-- Phone Number Field -->
                 <div class="mb-3">
-                    <label for="phone" class="form-label text-success">Phone No.</label>
+                    <label for="phone" class="form-label text-success"><b>Phone No.</b></label>
                     <input type="number" name="number" id="phone" class="form-control shadow-sm" placeholder="Enter Employee Phone Number" required>
                 </div>
 
                 <!-- Address Field -->
                 <div class="mb-3">
-                    <label for="address" class="form-label text-success">Employee Address</label>
+                    <label for="address" class="form-label text-success"><b>Employee Address</b></label>
                     <input type="text" name="address" id="address" class="form-control shadow-sm" placeholder="Enter Employee Address" required>
                 </div>
 
                 <!-- Date of Birth Field -->
                 <div class="mb-3">
-                    <label for="dob" class="form-label text-success">Date of Birth</label>
+                    <label for="dob" class="form-label text-success"><b>Date of Birth</b></label>
                     <input type="date" name="date" id="dob" class="form-control shadow-sm" required>
                 </div>
 
                 <!-- Gender Field -->
                 <div class="mb-3">
-                    <label for="gender" class="form-label text-success">Gender</label>
+                    <label for="gender" class="form-label text-success"><b>Gender</b></label>
                     <select name="gender" id="gender" class="form-control shadow-sm">
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
